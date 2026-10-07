@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Performance Analyzer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Student Performance Analyzer</h1>
+            <p>Analyze student marks and get performance results</p>
+        </header>
+
+        <main>
+
+            <!-- Student Information -->
+            <section class="card">
+                <h2>Student Information</h2>
+
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="studentName">Student Name</label>
+                        <input type="text" id="studentName"
+                               placeholder="Enter student name">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="rollNumber">Roll Number</label>
+                        <input type="text" id="rollNumber"
+                               placeholder="Enter roll number">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Marks Section -->
+            <section class="card">
+                <h2>Enter Subject Marks</h2>
+
+                <p class="instruction">
+                    Enter marks between 0 and 100 for each subject.
+                </p>
+
+                <div class="marks-grid">
+
+                    <div class="input-group">
+                        <label for="dataStructures">
+                            Data Structures
+                        </label>
+                        <input type="number" id="dataStructures"
+                               min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="digitalEconomy">
+                            Digital Economy and Management
+                        </label>
+                        <input type="number" id="digitalEconomy"
+                               min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="probability">
+                            Probability Theory and Statistics
+                        </label>
+                        <input type="number" id="probability"
+                               min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="openElective">
+                            Open Elective
+                        </label>
+                        <input type="number" id="openElective"
+                               min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="computerArchitecture">
+                            Computer Architecture
+                        </label>
+                        <input type="number" id="computerArchitecture"
+                               min="0" max="100" placeholder="0 - 100">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="professionalCommunication">
+                            Professional Communication
+                        </label>
+                        <input type="number"
+                               id="professionalCommunication"
+                               min="0" max="100"
+                               placeholder="0 - 100">
+                    </div>
+
+                </div>
+
+                <div class="button-container">
+                    <button id="analyzeBtn" onclick="analyzePerformance()">
+                        Analyze Performance
+                    </button>
+
+                    <button class="reset-btn" onclick="resetForm()">
+                        Reset
+                    </button>
+                </div>
+            </section>
+
+            <!-- Result Section -->
+            <section class="card result-card" id="resultSection">
+
+                <h2>Performance Report</h2>
+
+                <div class="student-summary">
+                    <p>
+                        <strong>Student:</strong>
+                        <span id="resultName">-</span>
+                    </p>
+
+                    <p>
+                        <strong>Roll Number:</strong>
+                        <span id="resultRoll">-</span>
+                    </p>
+                </div>
+
+                <div class="result-grid">
+
+                    <div class="result-box">
+                        <h3>Total Marks</h3>
+                        <p>
+                            <span id="totalMarks">0</span> / 600
+                        </p>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Percentage</h3>
+                        <p>
+                            <span id="percentage">0</span>%
+                        </p>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Grade</h3>
+                        <p id="grade">-</p>
+                    </div>
+
+                    <div class="result-box">
+                        <h3>Status</h3>
+                        <p id="status">-</p>
+                    </div>
+
+                </div>
+
+                <!-- Subject Performance -->
+                <div class="subject-performance">
+                    <h3>Subject-wise Performance</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Subject</th>
+                                <th>Marks</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="subjectTable">
+                            <tr>
+                                <td colspan="3">
+                                    Results will appear here
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Performance Message -->
+                <div class="performance-message">
+                    <h3>Performance Analysis</h3>
+                    <p id="performanceMessage">
+                        Enter marks and click "Analyze Performance".
+                    </p>
+                </div>
+
+            </section>
+
+        </main>
+
+        <footer>
+            <p>Student Performance Analyzer | Web Technology Mini Project</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
